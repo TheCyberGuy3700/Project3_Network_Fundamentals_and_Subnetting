@@ -2,96 +2,114 @@
 
 ## Project Overview
 
-This hands-on project builds foundational networking knowledge for cybersecurity analysis and cloud security engineering.
+This hands-on project develops foundational networking skills for cybersecurity analysis and cloud security engineering.
 
-The project combines networking concepts, worked subnetting calculations, Windows network configuration, connectivity testing, and DNS resolution. Findings are recorded in Markdown evidence files so that the observations and calculations can be reviewed and explained.
+The project combines IPv4 addressing, CIDR notation, subnet masks, subnet calculations, Windows network configuration, connectivity testing, and DNS resolution.
 
-This is a learning project developed through practical exercises. It distinguishes observed results from assumptions and documents the limitations of each test.
+Practical observations and calculations are documented in Markdown evidence files. The documentation distinguishes observed results from interpretations and explains the limitations of each test.
+
+**Project status: Core learning activities completed and published. Final repository review in progress.**
 
 ## Objectives
 
-- Understand IPv4 addresses, their four octets, and their 32-bit structure.
-- Practise converting between decimal and binary notation.
+- Understand IPv4 addresses, four octets, and the 32-bit address structure.
+- Understand binary and decimal notation in IPv4 addressing.
 - Interpret CIDR prefixes and subnet masks.
 - Calculate network addresses, broadcast addresses, and usable host ranges.
-- Understand address capacity and host bits.
-- Inspect Windows network interface configuration.
-- Test IP connectivity and basic DNS resolution.
-- Explain how subnetting and network segmentation support cybersecurity and cloud security.
+- Calculate host bits and total address capacity.
+- Inspect Windows network interfaces and IP configuration.
+- Test IP connectivity using ICMP.
+- Investigate basic DNS resolution using `nslookup`.
+- Explain how network segmentation supports cybersecurity and cloud security.
 
 ## Topics and Practical Work
 
 ### 1. IPv4 Addressing and Subnetting
 
-- IPv4 address structure and octets.
-- Binary and decimal notation.
-- CIDR prefixes and subnet masks.
-- Network and broadcast addresses.
-- Usable host ranges and address capacity.
-- Worked `/27` subnetting examples.
+Studied IPv4 address structure, CIDR prefixes, subnet masks, host bits, address capacity, block sizes, and subnet boundaries.
 
-Evidence: [`subnetting_fundamentals.md`](evidence/subnetting_fundamentals.md)
+Four worked examples demonstrate `/27` and `/26` calculations, including network addresses, usable host ranges, broadcast addresses, and the start of the next subnet.
+
+**Evidence:** [Subnetting Fundamentals](evidence/subnetting_fundamentals.md)
 
 ### 2. Windows IP Configuration
 
-Inspected Windows network interfaces, IPv4 addresses, subnet masks, and the default gateway. Identified VirtualBox host-only adapters separately from the Wi-Fi interface.
+Inspected Windows network interfaces, IPv4 addresses, subnet masks, default gateway, DHCP configuration, and DNS server settings. Distinguished the Wi-Fi interface from VirtualBox host-only adapters.
 
-Evidence: [`windows_ip_configuration.md`](evidence/windows_ip_configuration.md)
+**Evidence:** [Windows IP Configuration](evidence/windows_ip_configuration.md)
 
 ### 3. Connectivity Testing
 
-Tested ICMP connectivity to the configured gateway and to the public IP address `1.1.1.1`. Recorded the results and documented why a failed ping does not, by itself, prove that a device is offline.
+Tested ICMP connectivity to the configured gateway and the public IP address `1.1.1.1`.
 
-Evidence: [`connectivity_tests.md`](evidence/connectivity_tests.md)
+The recorded results demonstrate why a failed ping does not, by itself, prove that a device is offline, and why a successful ping does not prove that every network service is available.
+
+**Evidence:** [Connectivity Tests](evidence/connectivity_tests.md)
 
 ### 4. DNS Resolution
 
-Inspected the configured DNS server and used `nslookup example.com` to observe the IPv4 and IPv6 addresses returned by the DNS lookup.
+Inspected the configured DNS server and used `nslookup example.com` to observe the IPv4 and IPv6 addresses returned by the lookup.
 
-Evidence: [`dns_resolution.md`](evidence/dns_resolution.md)
+The evidence records the observed response and explains what it does and does not establish about DNS operation.
+
+**Evidence:** [DNS Resolution](evidence/dns_resolution.md)
 
 ## Project Structure
 
-- `README.md` — project overview, objectives, progress, and evidence links.
-- `notes/` — networking concepts and learning notes.
-- `evidence/` — documented calculations, configurations, and test results.
-- `screenshots/` — screenshots supporting the practical work, when available.
+```text
+Project3_Network_Fundamentals_and_Subnetting/
+├── README.md
+└── evidence/
+    ├── connectivity_tests.md
+    ├── dns_resolution.md
+    ├── subnetting_fundamentals.md
+    └── windows_ip_configuration.md
+```
 
 ## Tools Used
 
-- Windows Command Prompt — network configuration and connectivity commands.
+- Windows Command Prompt — IP configuration, connectivity testing, and DNS lookup.
 - Git Bash — command-line workflow and project file management.
-- Notepad — creating and editing Markdown documentation.
-- VirtualBox — virtual networking environment and host-only network adapters.
-- Git and GitHub — planned version control and project publication.
+- Notepad — editing Markdown documentation.
+- VirtualBox — virtual networking and host-only network adapters.
+- Git — version control and change history.
+- GitHub — remote repository and project publication.
 
 ## Cybersecurity Relevance
 
-Networking fundamentals help security analysts understand how devices communicate, how IP addresses and subnets define network boundaries, and how DNS supports communication using domain names.
+Networking knowledge helps security professionals understand how devices communicate, how IP addressing defines network boundaries, and how DNS supports communication through domain names.
 
-These skills are relevant to network troubleshooting, security monitoring, vulnerability assessment, network segmentation, and cloud network design.
+These fundamentals support network troubleshooting, security monitoring, vulnerability management, network segmentation, and cloud network design.
+
+Understanding subnets is particularly useful when reviewing cloud virtual networks, subnets, routing rules, and security boundaries.
 
 ## Evidence and Limitations
 
-The evidence files record the commands used, observed results, interpretations, and limitations.
+The evidence files document practical commands, observed results, interpretations, and limitations.
 
-The connectivity and DNS tests represent observations made at the time of testing. They do not constitute a complete security assessment of the computer or network. A successful ping or DNS lookup does not prove that every network service is available or secure.
+- Network configuration and test results reflect the environment at the time of observation.
+- IP addresses and network settings may change when the computer connects to a different network.
+- A successful ping or DNS lookup does not establish that all network services are available or secure.
+- These exercises are foundational learning activities, not a comprehensive security assessment.
+- Subnet calculations assume conventional IPv4 subnets unless an example explicitly states otherwise.
 
 ## Current Status
 
-**In progress.**
+The core learning activities are completed and documented, and the project is published on GitHub.
 
-Completed and documented:
-
-- IPv4 and subnetting fundamentals with worked examples.
-- Initial Windows IP configuration inspection.
-- Gateway and public-IP connectivity tests.
+Completed:
+- IPv4 addressing and subnetting fundamentals.
+- Worked `/27` and `/26` subnetting examples.
+- Windows IP configuration inspection.
+- ICMP connectivity testing.
 - Basic DNS configuration and resolution investigation.
+- Markdown evidence documentation.
+- Git version control and GitHub publication.
 
-Remaining work includes reviewing the complete project structure, checking evidence quality, completing further practical subnetting and networking exercises, and preparing the repository for publication.
+The final review checks documentation accuracy, repository consistency, and publication status.
 
 ## Learning Outcomes
 
-The goal is to develop a clear, practical understanding of networking concepts and the ability to explain commands, calculations, results, and limitations during technical interviews.
+This project develops the ability to interpret basic IPv4 network configuration, calculate subnet boundaries, perform elementary connectivity and DNS checks, and explain the meaning and limitations of observed results.
 
-The project also establishes foundational knowledge for later cybersecurity projects involving vulnerability management, security monitoring, and cloud networking.
+It provides a foundation for subsequent cybersecurity projects involving vulnerability management, security monitoring, and cloud networking.
